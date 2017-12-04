@@ -89,7 +89,7 @@ def main():
     rpl = readRplFromFile(replace);
     tmpl = template(txt, rpl)
     replacedTxt = writeOutToFile(output, tmpl)
-    copy = readFlagFromCmd("copy") == 'true' or readFlagFromCmd("c") == 'true' or False
+    copy = readFlagFromCmd("copy").lower() == 'true' or readFlagFromCmd("c").lower() == 'true' or False
     if copy:
         copyToClipboard(replacedTxt)
     print("Output created at " + output)
